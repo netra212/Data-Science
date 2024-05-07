@@ -5,6 +5,10 @@ class ATM:
 
     # constructor : Function inside the class. 
     def __init__(self):
+
+        print(id(self)) # <-- Print the id of the address. 
+        # self is object. 
+
         self.pin = ''
         self.balance = 0
         # calling the menu() function
@@ -105,5 +109,56 @@ Note:- We cannot change the name of the constructor.
 """
 
 """
+Golden Rules of OOPS:
+class: Rules made here....!
+       Only the object of the class can have right to access the member of the class. 
+      
 
+object:
+self keywords:
+# self is current object. 
+# self helps to call the one method to another method inside the class. 
+# For the intra class communication, we need to use the self as current object. 
 """
+
+class Fraction:
+
+    # parameterized constructor : required inputs. 
+    def __init__(self,x,y):
+        self.num = x
+        self.deno = y
+
+    def __str__(self):
+        return '{}/{}'.format(self.num, self.deno)
+
+    def __add__(self,other):
+        new_num = self.num*other.deno + other.num*self.deno
+        new_deno = self.deno*other.deno
+
+        return '{}/{}'.format(new_num, new_deno)
+
+    def __sub__(self, other):
+        new_num = self.num*other.deno - other.num*self.deno
+        new_deno = self.deno*other.deno
+
+        return '{}/{}'.format(new_num, new_deno)
+
+    def __mul__(self, other):
+        new_num = self.num*other.num
+        new_deno = self.deno*other.deno
+
+        return '{}/{}'.format(new_num, new_deno)
+    
+    def __truediv__(self, other):
+        new_num = self.num*other.deno
+        new_deno = self.deno*other.num
+
+        return '{}/{}'.format(new_num, new_deno)
+    
+fr1 = Fraction(4,5)
+print(fr1)
+
+
+
+
+
