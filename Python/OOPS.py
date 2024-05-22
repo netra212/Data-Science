@@ -92,8 +92,7 @@ atm = ATM()
 # Magic Method:
 # __name__
 # __init__ : constructor which is magic method. 
-# 
-# 
+
 
 """
 # Constructor:
@@ -114,7 +113,7 @@ class: Rules made here....!
        Only the object of the class can have right to access the member of the class. 
       
 
-object:
+Object:
 self keywords:
 # self is current object. 
 # self helps to call the one method to another method inside the class. 
@@ -154,7 +153,7 @@ class Fraction:
         new_deno = self.deno*other.num
 
         return '{}/{}'.format(new_num, new_deno)
-    
+
 fr1 = Fraction(4,5)
 print(fr1)
 
