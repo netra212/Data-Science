@@ -88,11 +88,9 @@ atm = ATM()
 # If the function is created inside the class then this is called method. 
 # If the function is created outside of the class then this is called function. 
 
-
 # Magic Method:
 # __name__
 # __init__ : constructor which is magic method. 
-
 
 """
 # Constructor:
@@ -107,11 +105,12 @@ Q. What are the true benefits of the constructor:
 Note:- We cannot change the name of the constructor. 
 """
 
+
+
 """
 Golden Rules of OOPS:
 class: Rules made here....!
        Only the object of the class can have right to access the member of the class. 
-      
 
 Object:
 self keywords:
