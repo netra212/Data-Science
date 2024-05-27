@@ -536,8 +536,8 @@ print(obj.m1())
 """
 Polymorphism
 Method Overriding
-Method Overloading
-Operator Overloading
+Method Overloading : autai name ko both method cha but both method le different kam garcha on the basis of the given input. 
+Operator Overloading : same operator ko function different huncha on the basis of the input. 
 """
 class Shape:
 

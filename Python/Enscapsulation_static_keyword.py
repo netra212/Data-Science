@@ -75,9 +75,11 @@ print(p.name)
 
 # Note:- Objects in the python are mutable for the user-defined classes Just like lists/sets/dictionary.
 
+
 """
 #. Enscapsulation.
 """
+
 # Instance var -> Python tutor.
 # Value of the instance variables depend on the Objects. 
 # For Object, value of the instance variable are differents.
@@ -91,7 +93,6 @@ p1 = Person("Netra", "Nepal")
 p2 = Person("Steve", "Australia")
 
 print(p1.name)
-
 
 # ATM Machine:
 class ATM:
