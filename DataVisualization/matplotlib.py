@@ -123,5 +123,67 @@ plt.scatter(tips['total_bill'], tips['tip'], s=tips['size']*20)
 # This is faster techniques. 
 plt.plot(tips['total_bill'], tips['tip'], 'o')
 
+# Barchart
+# # Bivariate Analysis.
+# Numerical Vs Categorical.
+# Use case - Aggregate Analysis of groups.
+# simple bar chart. 
+children = [10,20,40,10,30]
+colors = ['red','blue','green','yellow','pink']
+plt.bar(colors, children, color='green')
+
 # 
+# horizontal bar chart. 
+children = [10,20,40,10,30]
+colors = ['red','blue','green','yellow','pink']
+plt.barh(colors, children, color='green')
+# Horizontal Bar chart use case: if the numerical of categories is increased then
+# better to use the horizontal bar chart. 
+
+# 
+# color and label. 
+df = pd.read_csv("/content/drive/MyDrive/Datasets_DataVisualization/batsman_season_record.csv")
+df
+
+# 
+plt.bar(df['batsman'], df['2015'])
+plt.bar(df['batsman'], df['2016'])
+plt.bar(df['batsman'], df['2017'])
+
+# 
+# plotting bar chart side by side 
+plt.bar(np.arange(df.shape[0]) - 0.2, df['2015'], width=0.2)
+plt.bar(np.arange(df.shape[0]), df['2016'], width=0.2)
+plt.bar(np.arange(df.shape[0]) + 0.2, df['2017'], width=0.2)
+
+plt.xticks(np.arange(df.shape[0]),df['batsman'])
+plt.show()
+
+# 
+# a problem
+children = [10,20,40,10,30]
+colors = ['red red red','blue blue blue','green green green','yellow yellow yellow','pink pink pink']
+
+plt.bar(colors, children, color='green')
+plt.xticks(rotation='vertical')
+
+# 
+# stacked bar chart.: Issues found here. 
+plt.bar(df['batsman'], df['2015'], color='red', label='2017')
+plt.bar(df['batsman'], df['2016'], bottom=df['2015'], color='green', label='2016')
+plt.bar(df['batsman'], df['2017'], bottom=df['2016']+df['2015'], color='blue', label='2017')
+plt.legend()
+
+# 
+# Histogram
+# Univariate Analysis. 
+# Numerical columns. 
+# Use case - Frequency Counts. 
+
+# Simple Data. 
+
+data = [32, 45, 56, 10, 15, 27, 61]
+plt.hist(data,bins=[10,15,20,25,30,35,45,60,70,90])
+
+
 
