@@ -200,5 +200,48 @@ plt.hist(arr, bins=[10,20,30,40,50,60,70], log=True)
 plt.show()
 
 # 
+# Pie-chart
+# 
+# Univariate/Bivariate Analysis. 
+# Categorical Vs Numerical. 
+# Use case - To find contribution on a standard scale. 
+# simple data. 
+data = [23, 45, 100, 20, 40]
+subjects = ['eng','science','maths','sst','nepali']
+plt.pie(data, labels=subjects)
+plt.show()
+
+# 
+df = pd.read_csv("/content/drive/MyDrive/Datasets_DataVisualization/gayle-175.csv")
+df
+
+# 
+plt.pie(df['batsman_runs'], labels=df['batsman'], autopct='%0.1f%%')
+plt.show()
+
+# 
+# Percentage and colors. 
+plt.pie(df['batsman_runs'], labels=df['batsman'], autopct='%0.1f%%',explode=[0.3,0,0,0,0,0.1])
+plt.show()
+
+# 
+# Changing styles.
+# plt.style.available
+plt.style.use('fivethirtyeight')
+
+# 
+arr = np.load("/content/drive/MyDrive/Datasets_DataVisualization/big-array.npy")
+plt.hist(arr, bins=[10,20,30,40,50,60,70], log=True)
+plt.show()
+
+# 
+# save figure. 
+arr = np.load("/content/drive/MyDrive/Datasets_DataVisualization/big-array.npy")
+plt.hist(arr, bins=[10,20,30,40,50,60,70], log=True)
+# don't use the plt.show in this case while saving the image. 
+# otherwise, black image will be save. 
+plt.savefig('sample1.png')
+
+# 
 
 
