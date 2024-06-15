@@ -185,5 +185,20 @@ plt.legend()
 data = [32, 45, 56, 10, 15, 27, 61]
 plt.hist(data,bins=[10,15,20,25,30,35,45,60,70,90])
 
+# on some data. 
+df = pd.read_csv("/content/drive/MyDrive/Datasets_DataVisualization/vk.csv")
+df
+
+# 
+plt.hist(df['batsman_runs'], bins=[0,10,20,30,40,50,60,70,80,90,100,120])
+plt.show()
+
+# 
+# Logarithmic:
+arr = np.load("/content/drive/MyDrive/Datasets_DataVisualization/big-array.npy")
+plt.hist(arr, bins=[10,20,30,40,50,60,70], log=True)
+plt.show()
+
+# 
 
 
