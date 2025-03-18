@@ -1,0 +1,13 @@
+- Adjusted R-squared is a modified version of R-squared (R2) that adjusts for the number of predictor variables in a multiple regression model. It provides a more accurate measure of the goodness-of-fit of a model by considering the model's complexity.
+
+- In a multiple regression model, R-squared (R2) measures the proportion of variance in the response variable that is explained by the predictor variables. However, R-squared always increases or stays the same with the addition of new predictor variables, regardless of whether those variables contribute valuable information to the model.This can lead to overfitting, where a model becomes too complex and starts capturing noise in the data instead of the underlying relationships.
+
+- Adjusted R-squared accounts for the number of predictor variables in the model and the sample size, penalizing the model for adding unnecessary complexity. Adjusted R-squared can decrease when an irrelevant predictor variable is added to the model, making it a better metric for comparing models with different numbers of predictor variables.
+
+- Adjusted R^2 = 1 - (1-R^2) * (n-1) / (n-k-1)
+    Where, 
+        R^2 -> R-squared of the model. 
+        n -> number of observations in the dataset. 
+        k -> number of predictor variables in the model. 
+
+By using adjusted R-squared, we can more accurately assess the goodness-of-fit of a model & choose the optimal set of predictor variables for analysis. 
