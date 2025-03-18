@@ -1,0 +1,14 @@
+# Which one should be used ?
+- The choice between using R-squared and adjusted R-squared depends on the context and the goals of analysis.
+    
+    1. Model Comparision: 
+        If we are comparing models with different number of predictor variables, it's better to use adjusted R-squared. This is because adjusted r-squared takes into account the complexity of the model, penalizing the models that include irrelevant predictor variable or input features. R-squared, on the other hand can be misleading in this context, as it tends to increase with the addition of more predictor variables, even if they don't contribute valuable information to the model. 
+    
+    2. Model Interpretation:
+        If we are interested in understanding the proportion of variance in the response variable that can be explained by predictor variables in the model, R-squared can be a useful metric. However, keep in mind that Q-squared does not provide information about the significance or relevance of individual preditor variables. It's also important to remember that a high R-squared value does not necessarily imply causation or a good predictive model. 
+    
+    3. Model selection & overfitting:
+        When building a model and selecting predictor variables, it's important to guard against overfitting. In this context, adjusted R-squared can be a helpful metric, as it accounts for the number of predictor variables and penalizes themodel for unnecessary complexity. By using adjusted R-squared, you can avoid including irrelevant predictor variables that might lead to overfitting.
+    
+Note:- In summary, adjusted R-squared is generally more suitable when comparing models with different numbers of predictor variables or when you're concerned about overfitting. R- squared can be useful for understanding the overall explanatory power of the model, but it should be interpreted with caution, especially in cases with many predictor variables or potential multicollinearity.
+
