@@ -1,0 +1,45 @@
+# F-Test for Overall Significance.
+    - statistical test used to determine whether a linear regression model is statistical significant, meaning it provides a better fit to the data than just using the mean of the dependent variable. 
+
+    # steps to performs f-test:
+    1. state the null & alternative hypothesis:
+        a. Null Hypothesis (Ho):
+            - All regression coefficients (except the intercept) are equal to zero i.e., B1 = B2 = ... Bk = 0, meaning that none of the independent variables contribute significant to the explanation of the dependent variable's variation. 
+            
+        b. Alternative Hypothesis (Ha): 
+            - At least one regression coefficients is not equal to zero, indicating that at least one independent variable contribute significant to the explanation of the dependent variable's variation.
+
+    2. Fit the linear regression model to the data, estimating the regression coefficients (intercept and slopes).
+    
+    3. Calculate the sum of squares (SS) values.
+        a. Total sum of squares (TSS): 
+            - The sum of squared differences between each observed value of the dependent variable & it's mean. 
+
+        b. Regression or Explained Sum of Squares (ESS): 
+            - The sum of squared differences between the predicted values of the dependent variables & it's mean. 
+
+        c. Residual Sum of squares (RSS): 
+            - The sum of squared differences between the observed values and the predicted values of the dependent variables.
+    
+    4. Compute the Mean Squares (MS) values:
+        a. Mean Square Regression (MSR):
+            - ESS divided by the degrees of freedom for the model (df_model), which is the number of independent variable (k). This could also be called as Average Explained Variance Per independent features. 
+        
+        b. Mean Square Error (MSE):
+            - RSS divided by the degrees of freedom for the residuals (df_residuals), which is the number of data points (n) minus the number of estimated parameters, including the interncept (k+1). This could be called as average unexplained variance per degree of freedom. 
+    
+    5. Calculate F-statistic: 
+        F-statistic = MSR/MSE.
+
+    6. Determine the p-value:
+        - Compute the p-value associated with the calculated f-statistic using the f-distribution or a statistical software package. 
+    
+    7. Compare the calculated f-statistic to the p-value to the chosen significan level (alpha):
+        - if the p-value < alpha, reject null hypothesis. This indicates that at least one independent variable contributes significantly to the prediction of the dependent, and the overall regression model is statistically significant.
+        - if the p-value >= alpha, fail to reject the null hypothesis. 
+
+# F-statistic = (ESS/k) / (RSS/n-k-1)
+High F-statistic tells that regression line is able to fit on the data. 
+Low F-statistic tells that regression line is not able to fit on the data. 
+
+On Conclusion, F-statistic is used to find the relationships between X & Y means input features and output features. 
