@@ -1,0 +1,16 @@
+# What is feature selection ?
+-> Features = input columns.
+
+# Why do we need feature selection ?
+1. Curse of Dimensionality. 
+2. Computational Complexity. 
+3. Interpretability.
+
+# Filter Based Feature Selection ?
+- Filter-based feature selection techniques are methods that use statistical measures to score each feature independently, and then select a subset of features based on these scores. These methods are called "filter" methods because they essentially filter out the features that do not meet some criterion.
+
+# 
+
+
+
+
