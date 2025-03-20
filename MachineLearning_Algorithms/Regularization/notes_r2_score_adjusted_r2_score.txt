@@ -1,0 +1,22 @@
+The best possible R^2 (Coefficient of Determination) score is 1, which indicates that the model perfectly explains all the variability in the dependent variable. 
+
+For Adjusted R^2, the best score is also 1, but it is a more reliable measure when comparing model with different number of independent variables. Unlike r^2 which always increase when adding more predictors, Adjusted r^2 accounts for the number of predictors and can decrease if unnecessary variables are added. 
+
+Formula:-
+r^2-score:- 1 - SS_res / SS_total
+    where, 
+        SS_res -> Residual sum of squares. 
+        SS_total -> Total sum of squares. 
+    
+Adjusted r^2 scores:- 
+R^2_adjusted = 1 - ([(1 - r^2) (n - 1)] / n - k - 1)
+    where, 
+        n -> number of observations. (data points).
+        k -> number of independent variables (predictors).
+
+# Key Differences:-
+- R^2 can be misleading when adding more variables. 
+- Adjusted R^2 penalizes adding irrelevant variables and is better indicator for model comparision. 
+- If Adjusted r^2 decrease after adding a new variable, it means the variable is not useful. 
+
+# For the Good model, R^2 and Adjusted R^2 should be as close to 1 as possible, but in real-world scenarios, values between 0.7 to 0.9 are often considered strong, depdending on the complexity of the problem.
