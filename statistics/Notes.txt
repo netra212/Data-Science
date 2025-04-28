@@ -1,0 +1,54 @@
+
+*********************************************************************************************************
+# Pareto Distribution or Power Law Distribution:
+- Also, called 80/20 rules means 80% of the output comes from the 20% of the effort.
+- Pareto distribution -> probability distribution that describes situations where a small number of causes are responsible for a large proportion of the effect. 
+- Often used to model the wealth, income, and other phenomena where a few factors dominate. 
+- key characteristics:
+    a. Power Law:
+        -> The Pareto distribution is a type of power-law distribution, meaning that the frequency of an event decreases proportionally to a power of its scale. 
+    b. Heavy Tails:
+        -> It has a heavy tail, meaning that there's a higher probability of observing extreme values compared to a normal distribution.
+    c. Shape and Scale Parameters:
+        -> The distribution is defined by two parameters: 
+            a shape parameter (α) and a scale parameter (x_m).
+Question: how to detect if the distribution is a pareto distribution ?
+-> QQ plot or Quantile-Quantile plots -> A graphical tool used to assess if a dataset follows a specific distribution, often used to check for normality.
+    -> It works by plotting the quantiles of the observed data against the quantiles of a theoretical distribution.
+    -> If the data is close to the theoretical distribution, the points on the Q-Q plot will form a straight line.
+    ----
+    The plot shows the quantiles of your data against the quantiles of the theoretical distribution. If the data is well-aligned with the theoretical distribution, the points will fall close to a straight line, often a 45-degree line. 
+
+    Interpreting the Plot:
+    Linearity: 
+        If the points form a roughly straight line, it suggests that the data is consistent with the theoretical distribution. 
+    Deviations: 
+        If the points deviate from the line, especially in the tails (extreme values), it indicates that the data deviates from the theoretical distribution. 
+    Outliers: 
+        Points that are far from the line, especially in the tails, can indicate outliers in the data. 
+
+#. Quantiles:
+    These are the points that divide the data into equal portions. For example, the 25th quantile is the point below which 25% of the data falls.
+    
+#. Theoretical Distribution:
+    This is the distribution you are trying to compare your data to, such as a normal (Gaussian) distribution. 
+
+# Key Uses of Q-Q Plots:
+    1. Assessing Normality:
+        A common use is to check if a dataset follows a normal distribution. 
+
+    2. Comparing Distributions:
+        Q-Q plots can be used to compare the distributions of two datasets by plotting their quantiles against each other. 
+
+    3. Model Validation:
+        In statistical modeling, Q-Q plots can be used to check if the residuals (the difference between predicted and actual values) follow a normal distribution.
+
+    4. Outlier Detection:
+        Q-Q plots can help identify outliers in the data that deviate significantly from the expected distribution. 
+
+```
+    import statsmodels.api as sm
+    sm.qqplot(data, dist=stats.pareto, distargs=(shape, loc, scale), line='45')
+    plt.show()
+```
+*********************************************************************************************************
