@@ -1,0 +1,68 @@
+
+# Bernouli Distribution
+    - Probability distribution that models a binary outcomes, where the outcomes can be either success (represented by the value of 1) or failure (represented by the value of 0). 
+    - It describes a random experiment that has exactly two possible outcomes. 
+        Success (usually coded as 1)    
+        Failure (usually coded as 0)
+    Example:- 
+        - Tossing a coin (Heads = 1, Tails = 0),
+        - Checking if a machine works (Works = 1, Fails = 0),
+        - Is the email spam? (Spam = 1, Not spam = 0).
+
+    - Mathematical Definitions.
+        If 𝑋 is a random variable following a Bernoulli distribution:
+            P(X=1) = p
+            P(X=0) = 1 − p
+        where, p is the probabilty of success. 
+    - Probability Mass function:
+        P(X=x) = p^x * (1−p)^1−x for x ∈ {0, 1}
+
+# Binomial Distribution:
+    If we repeat multiple independent Bernoulli trials, it leads to a Binomial distribution.
+        -> Bernoulli is one trial.
+        -> Binomial is multiple trials.
+    - Binomial Distribution models the number of successes in a fixed number of independent Bernouli trials.
+    - In a simple words, 
+        - We have `n` repeated experiements. 
+        - Each experiment has only two outcomes (success = 1 or failure = 0).
+        - Each trial has the same probability of success (p).
+        - You want to know: " How many successes will I get ? ".
+
+    - Real World Examples:
+        a. Tossing a coin 10 times and counting how many heads you get.
+        b. Testing 100 people for a disease and counting how many are positive.
+        c. In email marketing, sending 200 emails and counting how many get opened.
+
+    Mathematical Definition:
+    If X∼Binomial(n,p), then:
+        - n = number of trials
+        - p = probability of success in one trial
+        - X = number of successes (can be 0, 1, 2, ..., n)
+
+    The Probability Mass Function (PMF):
+        P (X = k) = (n_C_k) * p^x * (1 - p)^n-k
+
+Notes:-
+    The distribution is symmetric if p = 0.5,
+    It is right-skewed if p < 0.5,
+    It is left-skewed if p > 0.5.
+
+```
+Code:
+
+from scipy.stats import binom
+import matplotlib.pyplot as plt
+
+n = 10  # number of trials
+p = 0.5  # probability of success
+
+# x = possible number of successes
+x = list(range(n+1))
+pmf = binom.pmf(x, n, p)
+
+plt.bar(x, pmf)
+plt.title('Binomial Distribution (n=10, p=0.5)')
+plt.xlabel('Number of Successes')
+plt.ylabel('Probability')
+plt.show()
+```
