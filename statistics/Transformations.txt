@@ -1,0 +1,49 @@
+
+----------------------------------------------------------------------
+# Some Common Transformation apply in the Data Science. 
+1. Log Transformation:
+    - Apply when data is highly right-skewed (e.g., income, price, population).
+    - Helps compress large values.
+    - Makes multiplicative relationships additive.
+    - Formula: log(x+1) to handle zeros)
+    - x' = log(x)
+
+2. Square Root Transformation:
+    - Used for moderate right skew.
+    - Often applied to count data (like number of occurrences).
+    - Formula: x' = np.sqrt(x)
+
+3. Reciprocal Transformation:
+    - Strongly reduces the impact of large values.
+    - Used for highly skewed data.
+    - Formula: x' = 1/x 
+        (sometimes 1/(x+1) if zeros)
+
+4. Box-Cox Transformation:
+    - A parametric power transformation.
+    - Automatically finds the best transformation (log, sqrt, etc.) to make data normal-like.
+    - Only works if data is positive.
+        x′ = x^λ - 1/λ If λ does not equal to zero.
+        x′ = log(x) (if λ = 0 )
+        (where, λ is automatically estimated)
+
+5. Yeo-Johnson Transformation:
+    - Like Box-Cox, but works with negative values too.
+​    - Very useful when your data has both positive and negative numbers.
+
+6.  Rank Transformation
+    - Replace values by their ranks.
+    - Useful in non-parametric statistics (e.g., Spearman correlation).
+
+9. Logit Transformation
+    - Used when the data is a proportion (values between 0 and 1).
+    - Transforms data into the full real line.
+
+
+----------------------------------------------------------------------
+## Scaling of Data. 
+1. Z-score Standardization (Standard Scaling)
+    - Center the data (mean = 0) and scale it (std = 1).
+    - Useful for models sensitive to scale (e.g., KNN, SVM, Neural Networks).
+    - Formula:
+        x' = x - μ / std. 
