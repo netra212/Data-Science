@@ -66,3 +66,46 @@ plt.xlabel('Number of Successes')
 plt.ylabel('Probability')
 plt.show()
 ```
+
+# Sampling Distribution:
+- Sampling distribution is a probability distribution of a sample statistic such as (like mean, proportion, variance) calculated from many samples of the same size, drawn from the same population.
+- In simple word, Imagine we keep taking samples from a population, calculate a value (like the sample mean) each time, and then plot all those values — that plot is the sampling distribution.
+    
+    Example to Understand:
+    - Suppose the average height of all students in a school is unknown.
+    - we take a random sample of 30 students, measure their average height.
+    - Then we take another sample of 30 students, measure again.
+    - Keep repeating this many times.
+    - Now, we have many sample means.
+    - The distribution of all these sample means is the sampling distribution of the mean.
+
+# Key Ideas:
+Concept	Meaning
+    Population  ->	The full group you're interested in (e.g., all students in the school).
+    Sample	    ->  A smaller group picked randomly from the population (e.g., 30 students).
+    Statistic	->  A number you calculate from the sample (e.g., sample mean height).
+    Sampling Distribution	-> Distribution of the statistic (like mean) across many samples.
+
+Sampling Distribution is important because it allows us to understand how much our sample statisitcs varies. Also, they are essential for the hypothesis testing and confidence intervals. 
+Also, tells us how reliable our sample estimate is.
+
+```
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Create a population
+population = np.random.normal(loc=50, scale=10, size=10000)
+
+# Create sampling distribution
+sample_means = []
+for _ in range(1000):
+    sample = np.random.choice(population, size=30)
+    sample_means.append(np.mean(sample))
+
+# Plot
+plt.hist(sample_means, bins=30, edgecolor='black', density=True)
+plt.title('Sampling Distribution of the Sample Mean')
+plt.xlabel('Sample Mean')
+plt.ylabel('Frequency')
+plt.show()
+```
